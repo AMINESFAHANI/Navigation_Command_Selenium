@@ -34,6 +34,15 @@ public class NavigateCommand {
             //WebElement linkText = driver.findElement(new By.ByXPath("/html/body/div/div[4]/div/p/a"));
             WebElement linkText = driver.findElement(new By.ByLinkText("This is a link"));
 
+            // It checks if the linkText is Enable or not.
+            if(linkText.isEnabled()){
+                System.out.println("The linkText is enable");
+            }
+            // It checks if the linkText is Displayed or not.
+            if(linkText.isDisplayed()){
+                System.out.println("The linktext is Displayed");
+            }
+
             wait.until(ExpectedConditions.elementToBeClickable(linkText));
 
             System.out.println(linkText.getText());
